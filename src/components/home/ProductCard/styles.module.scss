@@ -1,0 +1,68 @@
+.card {
+  :global {
+    .ant-card-body {
+        padding: 16px;
+    }
+  }
+}
+
+.coverWrapper {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    
+    img {
+        height: 150px;
+        object-fit: contain;
+    }
+    
+    .badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+.category {
+    font-size: var(--font-small);
+    color: var(--secondary-text-color);
+    margin-bottom: 4px;
+}
+
+.title {
+    font-size: var(--font-large);
+    font-weight: 600;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--primary-text-color);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-small);
+    margin-bottom: 12px;
+    
+    .rate {
+        font-size: var(--font-small);
+        margin-right: 8px;
+    }
+    
+    .count {
+        color: var(--secondary-text-color);
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .price {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: var(--primary-text-color);
+    }
+}
