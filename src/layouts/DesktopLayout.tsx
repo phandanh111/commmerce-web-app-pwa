@@ -11,14 +11,12 @@ type Props = {
 
 const DesktopLayout: React.FC<Props> = ({ children }) => {
   return (
-    <Layout style={{ minHeight: '100vh', background: 'var(--white)' }}>
+    <Layout className="layout" style={{ minHeight: '100vh', background: 'var(--white)' }}> {/* Added className */}
       <Header />
-      <Content style={{ padding: '0 20px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+      <Content style={{ padding: '0', background: 'var(--white)' }}> {/* Updated Content style */}
         {children}
       </Content>
-      <Footer style={{ textAlign: 'center', background: 'var(--background-color)' }}>
-        FreshCart ©{new Date().getFullYear()} Created by Antigravity
-      </Footer>
+      <Footer /> {/* Replaced AntD Footer with custom Footer component */}
     </Layout>
   );
 };
