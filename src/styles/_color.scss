@@ -1,19 +1,20 @@
 :root {
-  --primary-color: #7fad39;
-  --secondary-color: #120851;
+  --primary-color: #7B1A1A;
+  --secondary-color: #C8A951;
   --primary-text-color: #1c1c1c;
   --secondary-text-color: #6f6f6f;
   --white: #ffffff;
   --error: #ea4b48;
   --warning: #ff8a00;
-  --success: #7fad39;
-  --background-color: #f5f5f5;
-  --border-color: #ebebeb;
-  
+  --success: #28a745;
+  --background-color: #f8f5f0;
+  --border-color: #e8e0d5;
+  --footer-bg: #1a2332;
+
   // Font sizes
   --font-small: 0.875rem;   // 14px
   --font-medium: 1rem;      // 16px
   --font-large: 1.125rem;   // 18px
-  --font-xl: 1.25rem;      // 20px
-  --font-xxl: 2rem;        // 32px
+  --font-xl: 1.25rem;       // 20px
+  --font-xxl: 2rem;         // 32px
 }

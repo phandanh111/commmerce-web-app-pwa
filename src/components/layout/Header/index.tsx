@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MailOutlined, FacebookFilled, TwitterSquareFilled, LinkedinFilled, UserOutlined, ShoppingCartOutlined, HeartOutlined, MenuOutlined } from '@ant-design/icons';
+import { PhoneFilled, FacebookFilled, SearchOutlined, ShoppingCartOutlined, MenuOutlined } from '@ant-design/icons';
 import { Drawer } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -9,34 +9,39 @@ type Props = {
   className?: string;
 };
 
+const navLinks = [
+  { path: '/', label: 'Trang chủ' },
+  { path: '/about', label: 'Giới thiệu' },
+  { path: '/products', label: 'Sản phẩm' },
+  { path: '/news', label: 'Tin tức' },
+  { path: '/showroom', label: 'Showroom' },
+  { path: '/contact', label: 'Liên Hệ' },
+];
+
 function Header({ className }: Props) {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const isActive = (path: string) => location.pathname === path ? styles.active : '';
 
-  const showDrawer = () => setOpen(true);
-  const onClose = () => setOpen(false);
-
   return (
     <div className={`${styles.headerWrapper} ${className || ''}`}>
-      {/* Top Bar */}
+      {/* Top Bar — Maroon with hotlines */}
       <div className={styles.topBar}>
         <div className={styles.container}>
-          <div className={styles.left}>
-            <div className={styles.mail}>
-              <MailOutlined /> hello@colorlib.com
-            </div>
-            <div>Free Shipping for all Order of $99</div>
+          <div className={styles.hotlines}>
+            <a href="tel:0362658888" className={styles.hotline}>
+              <PhoneFilled /> 03.6265.8888
+            </a>
+            <a href="tel:0246265888" className={styles.hotline}>
+              <PhoneFilled /> 024.6265.8888
+            </a>
+            <a href="tel:0286265888" className={styles.hotline}>
+              <PhoneFilled /> 028.6265.8888
+            </a>
           </div>
-          <div className={styles.right}>
-            <div className={styles.socials}>
-              <a href="#"><FacebookFilled /></a>
-              <a href="#"><TwitterSquareFilled /></a>
-              <a href="#"><LinkedinFilled /></a>
-            </div>
-            <div className={styles.auth}>
-              <UserOutlined /> Login
-            </div>
+          <div className={styles.socials}>
+            <a href="#" aria-label="Facebook"><FacebookFilled /></a>
+            <a href="#" aria-label="Zalo">Zalo</a>
           </div>
         </div>
       </div>
@@ -44,52 +49,41 @@ function Header({ className }: Props) {
       {/* Main NavBar */}
       <div className={styles.mainHeader}>
         <div className={styles.container}>
-          <div className={styles.hamburger} onClick={showDrawer}>
+          <div className={styles.hamburger} onClick={() => setOpen(true)}>
             <MenuOutlined />
           </div>
 
           <Link to="/" className={styles.logo}>
-            PCD PWA
+            <span className={styles.logoText}>VƯƠNG GIA</span>
+            <span className={styles.logoSub}>Yến</span>
           </Link>
 
           <nav className={styles.nav}>
-            <Link to="/" className={isActive('/')}>HOME</Link>
-            <Link to="/shop" className={isActive('/shop')}>SHOP</Link>
-            <Link to="/pages" className={isActive('/pages')}>PAGES</Link>
-            <Link to="/blog" className={isActive('/blog')}>BLOG</Link>
-            <Link to="/contact" className={isActive('/contact')}>CONTACT</Link>
+            {navLinks.map(link => (
+              <Link key={link.path} to={link.path} className={isActive(link.path)}>
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          <div className={styles.cart}>
-            <div className={styles.icon}>
-              <HeartOutlined />
-              <span>1</span>
-            </div>
-            <div className={styles.icon}>
+          <div className={styles.actions}>
+            <button type="button" className={styles.actionBtn} aria-label="Search">
+              <SearchOutlined />
+            </button>
+            <button type="button" className={styles.actionBtn} aria-label="Cart">
               <ShoppingCartOutlined />
-              <span>3</span>
-            </div>
-            <div className={styles.price}>item: <span>$150.00</span></div>
+            </button>
           </div>
         </div>
       </div>
 
-      <Drawer title="Menu" placement="left" onClose={onClose} open={open}>
+      <Drawer title="Menu" placement="left" onClose={() => setOpen(false)} open={open}>
         <div className={styles.drawerMenu}>
-          <Link to="/" onClick={onClose} className={isActive('/')}>HOME</Link>
-          <Link to="/shop" onClick={onClose} className={isActive('/shop')}>SHOP</Link>
-          <Link to="/pages" onClick={onClose} className={isActive('/pages')}>PAGES</Link>
-          <Link to="/blog" onClick={onClose} className={isActive('/blog')}>BLOG</Link>
-          <Link to="/contact" onClick={onClose} className={isActive('/contact')}>CONTACT</Link>
-
-          <div className={styles.drawerSocials}>
-            <a href="#"><FacebookFilled /></a>
-            <a href="#"><TwitterSquareFilled /></a>
-            <a href="#"><LinkedinFilled /></a>
-          </div>
-          <div className={styles.drawerAuth}>
-            <UserOutlined /> Login
-          </div>
+          {navLinks.map(link => (
+            <Link key={link.path} to={link.path} onClick={() => setOpen(false)} className={isActive(link.path)}>
+              {link.label}
+            </Link>
+          ))}
         </div>
       </Drawer>
     </div>

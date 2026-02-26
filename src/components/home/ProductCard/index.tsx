@@ -1,6 +1,4 @@
 import React from 'react';
-import { Card, Button, Rate, Tag } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
 
 import styles from './styles.module.scss';
 
@@ -10,34 +8,32 @@ type Props = {
   title: string;
   category: string;
   price: number;
-  rating: number;
-  reviewCount: number;
+  originalPrice?: number;
   badge?: string;
 };
 
-function ProductCard({ className, image, title, category, price, rating, reviewCount, badge }: Props) {
+function ProductCard({ className, image, title, category, price, originalPrice, badge }: Props) {
+  const formatPrice = (value: number) =>
+    value.toLocaleString('vi-VN') + 'đ';
+
   return (
-    <Card
-      hoverable
-      className={`${styles.card} ${className || ''}`}
-      cover={
-        <div className={styles.coverWrapper}>
-          {badge && <Tag color="orange" className={styles.badge}>{badge}</Tag>}
-          <img alt={title} src={image} />
+    <div className={`${styles.card} ${className || ''}`}>
+      <div className={styles.imageWrapper}>
+        {badge && <span className={styles.badge}>{badge}</span>}
+        <img src={image} alt={title} />
+      </div>
+      <div className={styles.info}>
+        <div className={styles.category}>{category}</div>
+        <div className={styles.title} title={title}>{title}</div>
+        <div className={styles.priceRow}>
+          {originalPrice && (
+            <span className={styles.originalPrice}>{formatPrice(originalPrice)}</span>
+          )}
+          <span className={styles.price}>{formatPrice(price)}</span>
         </div>
-      }
-    >
-      <div className={styles.category}>{category}</div>
-      <div className={styles.title} title={title}>{title}</div>
-      <div className={styles.rating}>
-        <Rate disabled defaultValue={rating} className={styles.rate} />
-        <span className={styles.count}>{rating} ({reviewCount})</span>
+        <button type="button" className={styles.orderBtn}>Đặt hàng</button>
       </div>
-      <div className={styles.footer}>
-        <span className={styles.price}>${price.toFixed(2)}</span>
-        <Button type="primary" shape="circle" icon={<PlusOutlined />} />
-      </div>
-    </Card>
+    </div>
   );
 }
 

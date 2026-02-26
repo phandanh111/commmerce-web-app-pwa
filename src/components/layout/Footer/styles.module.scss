@@ -1,0 +1,73 @@
+.footer {
+  background: var(--footer-bg);
+  color: #c8c8c8;
+  padding: 50px 0 0;
+  margin-top: 60px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.about {
+  .logo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .logoText {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 2px;
+  }
+
+  .logoSub {
+    font-size: 14px;
+    color: var(--secondary-color);
+    letter-spacing: 3px;
+  }
+
+  .desc {
+    line-height: 1.8;
+    font-size: var(--font-small);
+  }
+}
+
+.contact {
+  h6 {
+    color: var(--secondary-color);
+    font-size: var(--font-medium);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--font-medium);
+  }
+
+  .contactIcon {
+    color: var(--secondary-color);
+  }
+}
+
+.copyright {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: var(--font-small);
+  color: #8a8a8a;
+}
