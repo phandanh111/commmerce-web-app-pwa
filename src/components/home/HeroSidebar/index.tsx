@@ -1,6 +1,11 @@
 import React from 'react';
-import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
+
+import styles from './styles.module.scss';
+
+type Props = {
+  className?: string;
+};
 
 const categories = [
   'Yến Tinh Chế',
@@ -9,12 +14,12 @@ const categories = [
   'Yến Hũ',
   'Quà Tặng Yến',
   'Yến Vụn',
-  'Sản Phẩm Khác'
+  'Sản Phẩm Khác',
 ];
 
-const HeroSidebar: React.FC = () => {
+function HeroSidebar({ className }: Props) {
   return (
-    <div className={styles.sidebar}>
+    <div className={`${styles.sidebar} ${className || ''}`}>
       <div className={styles.title}>All Departments</div>
       <ul>
         {categories.map((cat, index) => (
@@ -25,6 +30,6 @@ const HeroSidebar: React.FC = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default React.memo(HeroSidebar);

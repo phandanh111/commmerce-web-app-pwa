@@ -2,23 +2,23 @@ import React, { type ReactNode } from 'react';
 import { Layout } from 'antd';
 
 import Header from '@/components/layout/Header';
+import styles from './styles.module.scss';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 type Props = {
   children: ReactNode;
 };
 
-const DesktopLayout: React.FC<Props> = ({ children }) => {
+function DesktopLayout({ children }: Props) {
   return (
-    <Layout className="layout" style={{ minHeight: '100vh', background: 'var(--white)' }}> {/* Added className */}
+    <Layout className={styles.desktopLayout}>
       <Header />
-      <Content style={{ padding: '0', background: 'var(--white)' }}> {/* Updated Content style */}
+      <Content className={styles.content}>
         {children}
       </Content>
-      <Footer /> {/* Replaced AntD Footer with custom Footer component */}
     </Layout>
   );
-};
+}
 
-export default DesktopLayout;
+export default React.memo(DesktopLayout);

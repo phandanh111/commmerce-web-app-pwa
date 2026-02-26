@@ -1,8 +1,11 @@
 import React from 'react';
 import { Row, Col } from 'antd';
+
 import Hero from '@/components/home/Hero';
 import HeroSidebar from '@/components/home/HeroSidebar';
 import ProductCard from '@/components/home/ProductCard';
+import SectionTitle from '@/components/common/SectionTitle';
+import styles from './styles.module.scss';
 
 const mockProducts = [
   { id: 1, title: 'Tổ Yến Tinh Chế Loại 1 (100g)', category: 'Yến Tinh Chế', price: 350.00, rating: 5.0, reviewCount: 120, image: 'https://placehold.co/200x200?text=Yen+Tinh+Che', badge: 'Best Seller' },
@@ -15,34 +18,31 @@ const mockProducts = [
   { id: 8, title: 'Quà Tặng Yến Sào VIP', category: 'Quà Tặng', price: 500.00, rating: 5.0, reviewCount: 15, image: 'https://placehold.co/200x200?text=Qua+Tang' },
 ];
 
-const HomeContainer: React.FC = () => {
+function HomeContainer() {
   return (
-    <div style={{ maxWidth: '1170px', margin: '0 auto', padding: '0 15px' }}>
+    <div className={styles.container}>
       <Row gutter={30}>
-        <Col lg={6} md={0} xs={0} className="sidebar-col"> 
-            <HeroSidebar />
+        <Col lg={6} md={0} xs={0}>
+          <HeroSidebar />
         </Col>
         <Col lg={18} md={24} xs={24}>
-            <Hero />
+          <Hero />
         </Col>
       </Row>
 
-      <div style={{ marginTop: '80px' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '40px', fontWeight: 700, position: 'relative' }}>
-             Featured Products
-             <div style={{ width: '80px', height: '4px', background: 'var(--primary-color)', margin: '15px auto 0' }}></div>
-        </h2>
-        
+      <div className={styles.featuredSection}>
+        <SectionTitle title="Featured Products" />
+
         <Row gutter={[30, 30]}>
-            {mockProducts.map(product => (
-                <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
-                    <ProductCard {...product} />
-                </Col>
-            ))}
+          {mockProducts.map(product => (
+            <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
+              <ProductCard {...product} />
+            </Col>
+          ))}
         </Row>
       </div>
     </div>
   );
-};
+}
 
 export default React.memo(HomeContainer);

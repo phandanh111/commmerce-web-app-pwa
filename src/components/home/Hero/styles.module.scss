@@ -26,8 +26,9 @@
     white-space: nowrap;
     position: relative;
     
-    &::after {
-        content: ''; // Arrow icon could go here
+    .dropdownIcon {
+      font-size: 10px;
+      margin-left: 5px;
     }
   }
   

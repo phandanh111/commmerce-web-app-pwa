@@ -1,8 +1,7 @@
-import React from 'react';
 import HomeContainer from '@/containers/HomeContainer';
 
-const Home: React.FC = () => {
-  return <HomeContainer />;
-};
+type Props = {};
 
-export default Home;
+export default function Home({}: Props) {
+  return <HomeContainer />;
+}

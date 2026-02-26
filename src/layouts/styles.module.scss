@@ -1,0 +1,27 @@
+.desktopLayout {
+  min-height: 100vh;
+  background: var(--white);
+}
+
+.content {
+  padding: 0;
+  background: var(--white);
+}
+
+// Mobile Layout
+.mobileLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--background-color);
+}
+
+.mobileContent {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobileTabBar {
+  background: var(--white);
+  border-top: 1px solid var(--border-color);
+}
