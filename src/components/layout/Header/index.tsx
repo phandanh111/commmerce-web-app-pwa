@@ -30,14 +30,11 @@ function Header({ className }: Props) {
       <div className={styles.topBar}>
         <div className={styles.container}>
           <div className={styles.hotlines}>
-            <a href="tel:0362658888" className={styles.hotline}>
-              <PhoneFilled /> 03.6265.8888
+            <a href="tel:0326027020" className={styles.hotline}>
+              <PhoneFilled /> 03.2602.7020
             </a>
-            <a href="tel:0246265888" className={styles.hotline}>
-              <PhoneFilled /> 024.6265.8888
-            </a>
-            <a href="tel:0286265888" className={styles.hotline}>
-              <PhoneFilled /> 028.6265.8888
+            <a href="tel:0326027020" className={styles.hotline}>
+              <PhoneFilled /> 03.2602.7020
             </a>
           </div>
           <div className={styles.socials}>

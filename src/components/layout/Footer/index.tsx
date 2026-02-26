@@ -37,7 +37,7 @@ function Footer({ className }: Props) {
                 </li>
                 <li>
                   <PhoneFilled className={styles.contactIcon} />
-                  Điện thoại: 03.6265.8888
+                  Điện thoại: 03.2602.7020
                 </li>
               </ul>
             </div>
