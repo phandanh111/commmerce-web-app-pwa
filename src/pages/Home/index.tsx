@@ -1,7 +1,7 @@
 import HomeContainer from '@/containers/HomeContainer';
 
-type Props = {};
+const HomePage = () => {
+    return <HomeContainer />;
+};
 
-export default function Home({}: Props) {
-  return <HomeContainer />;
-}
+export default HomePage;

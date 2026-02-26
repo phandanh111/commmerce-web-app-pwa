@@ -4,6 +4,7 @@ import { Row, Col } from 'antd';
 import Hero from '@/components/home/Hero';
 import ProductCard from '@/components/home/ProductCard';
 import SectionTitle from '@/components/common/SectionTitle';
+
 import styles from './styles.module.scss';
 
 const mockProducts = [
@@ -17,45 +18,45 @@ const mockProducts = [
   { id: 8, title: 'Tổ Yến Thô 100Gr', category: 'Yến Tổ Thô Sạch', price: 3800000, originalPrice: 4500000, image: 'https://placehold.co/200x200/faf8f5/7B1A1A?text=Tho+100G', badge: 'Giảm giá' },
 ];
 
-function HomeContainer() {
-  return (
-    <div className={styles.container}>
-      <Hero />
+const HomeContainer: React.FC = () => {
+    return (
+        <div className={styles.container}>
+            <Hero />
 
-      <div className={styles.section}>
-        <SectionTitle title="Chè Tổ Yến" />
-        <Row gutter={[20, 20]}>
-          {mockProducts.filter(p => p.category === 'Chè Tổ Yến').map(product => (
-            <Col xs={24} sm={12} md={8} key={product.id}>
-              <ProductCard {...product} />
-            </Col>
-          ))}
-        </Row>
-      </div>
+            <div className={styles.section}>
+                <SectionTitle title="Chè Tổ Yến" />
+                <Row gutter={[20, 20]}>
+                    {mockProducts.filter(p => p.category === 'Chè Tổ Yến').map(product => (
+                        <Col xs={24} sm={12} md={8} key={product.id}>
+                            <ProductCard {...product} />
+                        </Col>
+                    ))}
+                </Row>
+            </div>
 
-      <div className={styles.section}>
-        <SectionTitle title="Dòng sản phẩm Lọ 100ml" />
-        <Row gutter={[20, 20]}>
-          {mockProducts.filter(p => p.category === 'Yến Chưng Lọ 100ml').map(product => (
-            <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
-              <ProductCard {...product} />
-            </Col>
-          ))}
-        </Row>
-      </div>
+            <div className={styles.section}>
+                <SectionTitle title="Dòng sản phẩm Lọ 100ml" />
+                <Row gutter={[20, 20]}>
+                    {mockProducts.filter(p => p.category === 'Yến Chưng Lọ 100ml').map(product => (
+                        <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
+                            <ProductCard {...product} />
+                        </Col>
+                    ))}
+                </Row>
+            </div>
 
-      <div className={styles.section}>
-        <SectionTitle title="Yến Tổ Thô Sạch" />
-        <Row gutter={[20, 20]}>
-          {mockProducts.filter(p => p.category === 'Yến Tổ Thô Sạch').map(product => (
-            <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
-              <ProductCard {...product} />
-            </Col>
-          ))}
-        </Row>
-      </div>
-    </div>
-  );
-}
+            <div className={styles.section}>
+                <SectionTitle title="Yến Tổ Thô Sạch" />
+                <Row gutter={[20, 20]}>
+                    {mockProducts.filter(p => p.category === 'Yến Tổ Thô Sạch').map(product => (
+                        <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
+                            <ProductCard {...product} />
+                        </Col>
+                    ))}
+                </Row>
+            </div>
+        </div>
+    );
+};
 
 export default React.memo(HomeContainer);

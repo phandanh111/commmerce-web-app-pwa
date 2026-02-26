@@ -3,6 +3,7 @@ import { PhoneFilled, FacebookFilled, SearchOutlined, ShoppingCartOutlined, Menu
 import { Drawer } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 
+import { ROUTES } from '@/constants/router';
 import styles from './styles.module.scss';
 
 type Props = {
@@ -10,12 +11,12 @@ type Props = {
 };
 
 const navLinks = [
-  { path: '/', label: 'Trang chủ' },
-  { path: '/about', label: 'Giới thiệu' },
-  { path: '/products', label: 'Sản phẩm' },
-  { path: '/news', label: 'Tin tức' },
-  { path: '/showroom', label: 'Showroom' },
-  { path: '/contact', label: 'Liên Hệ' },
+  { path: ROUTES.HOME, label: 'Trang chủ' },
+  { path: ROUTES.ABOUT, label: 'Giới thiệu' },
+  { path: ROUTES.PRODUCTS, label: 'Sản phẩm' },
+  { path: ROUTES.NEWS, label: 'Tin tức' },
+  { path: ROUTES.SHOWROOM, label: 'Showroom' },
+  { path: ROUTES.CONTACT, label: 'Liên Hệ' },
 ];
 
 function Header({ className }: Props) {

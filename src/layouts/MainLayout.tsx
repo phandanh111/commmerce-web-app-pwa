@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Grid } from 'antd';
 import { Outlet } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ function MainLayout() {
   const isDesktop = screens.md;
 
   return (
-    <>
+    <Suspense fallback={null}>
       {isDesktop ? (
         <DesktopLayout>
           <Outlet />
@@ -22,7 +22,7 @@ function MainLayout() {
           <Outlet />
         </MobileLayout>
       )}
-    </>
+    </Suspense>
   );
 }
 
