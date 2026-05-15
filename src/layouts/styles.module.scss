@@ -1,27 +1,16 @@
-.desktopLayout {
-  min-height: 100vh;
-  background: var(--white);
-}
-
-.content {
-  padding: 0;
-  background: var(--white);
-}
-
-// Mobile Layout
-.mobileLayout {
+.layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: var(--background-color);
+  min-height: 100vh;
 }
 
-.mobileContent {
+.main {
   flex: 1;
-  overflow-y: auto;
 }
 
-.mobileTabBar {
-  background: var(--white);
-  border-top: 1px solid var(--border-color);
-}
+// Legacy classes kept for compatibility
+.desktopLayout { min-height: 100vh; }
+.content { padding: 0; }
+.mobileLayout { display: flex; flex-direction: column; min-height: 100vh; }
+.mobileContent { flex: 1; overflow-y: auto; }
+.mobileTabBar { background: var(--white); border-top: 1px solid var(--border-color); }

@@ -1,20 +1,80 @@
 :root {
-  --primary-color: #7B1A1A;
-  --secondary-color: #C8A951;
-  --primary-text-color: #1c1c1c;
-  --secondary-text-color: #6f6f6f;
+  // Brand colors
+  --primary: #C8A000;
+  --primary-light: #FFD700;
+  --primary-dark: #8A6A00;
+  --primary-rgb: 200, 160, 0;
+
+  --accent: #FF6B2C;
+  --accent-light: #FF8C5A;
+  --accent-dark: #D94F10;
+
+  --secondary: #1E2B3A;
+  --secondary-light: #2D3F52;
+
+  // Text
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --text-inverse: #FFFFFF;
+
+  // Background
+  --bg-primary: #FFFDF5;
+  --bg-secondary: #F8F0E3;
+  --bg-card: #FFFFFF;
+  --bg-dark: #141824;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  // Border
+  --border: #F0E8D0;
+  --border-dark: #D4C99A;
+
+  // State colors
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --info: #3B82F6;
+
+  // Legacy aliases for existing code
+  --primary-color: #C8A000;
+  --secondary-color: #1E2B3A;
+  --primary-text-color: #1A1A1A;
+  --secondary-text-color: #6B7280;
   --white: #ffffff;
-  --error: #ea4b48;
-  --warning: #ff8a00;
-  --success: #28a745;
-  --background-color: #f8f5f0;
-  --border-color: #e8e0d5;
-  --footer-bg: #1a2332;
+  --background-color: #FFFDF5;
+  --border-color: #F0E8D0;
+  --footer-bg: #141824;
+
+  // Shadows
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.14);
+  --shadow-gold: 0 4px 20px rgba(200,160,0,0.25);
+
+  // Radius
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  // Transitions
+  --transition: 0.2s ease;
+  --transition-slow: 0.4s ease;
 
   // Font sizes
-  --font-small: 0.875rem;   // 14px
-  --font-medium: 1rem;      // 16px
-  --font-large: 1.125rem;   // 18px
-  --font-xl: 1.25rem;       // 20px
-  --font-xxl: 2rem;         // 32px
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 2rem;
+  --font-4xl: 2.5rem;
+
+  // Legacy
+  --font-small: 0.875rem;
+  --font-medium: 1rem;
+  --font-large: 1.125rem;
+  --font-xxl: 2rem;
 }

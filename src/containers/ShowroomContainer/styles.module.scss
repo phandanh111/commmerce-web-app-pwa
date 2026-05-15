@@ -1,12 +1,7 @@
-.wrapper {
-    padding: 24px;
-    max-width: 1170px;
-    margin: 0 auto;
-}
-
-.title {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--primary-text-color);
-}
+.page { min-height: 60vh; background: var(--bg-primary); }
+.hero { background: linear-gradient(135deg, #1E2B3A, #2D3F52); padding: 64px 24px; text-align: center; h1 { color: white; font-size: 2rem; font-weight: 800; } p { color: rgba(255,255,255,0.6); margin-top: 8px; } }
+.container { max-width: 1280px; margin: 0 auto; padding: 60px 24px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; @media (max-width: 768px) { grid-template-columns: 1fr; } }
+.card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; display: flex; flex-direction: column; gap: 14px; transition: all 0.2s; &:hover { box-shadow: var(--shadow-gold); border-color: var(--primary); } h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); } }
+.row { display: flex; align-items: flex-start; gap: 10px; font-size: var(--font-sm); color: var(--text-secondary); a { color: var(--primary); font-weight: 600; } }
+.icon { color: var(--primary); margin-top: 2px; flex-shrink: 0; }

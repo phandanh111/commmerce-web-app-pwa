@@ -1,73 +1,146 @@
-.footer {
-  background: var(--footer-bg);
-  color: #c8c8c8;
-  padding: 50px 0 0;
-  margin-top: 60px;
+@use '@/styles/color';
+
+.footer { background: var(--bg-dark); color: rgba(255,255,255,0.7); }
+
+.footerTop {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 24px;
 }
 
-.about {
-  .logo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
 
-  .logoText {
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: 2px;
-  }
-
-  .logoSub {
-    font-size: 14px;
-    color: var(--secondary-color);
-    letter-spacing: 3px;
-  }
-
-  .desc {
-    line-height: 1.8;
-    font-size: var(--font-small);
-  }
+  @media (max-width: 1024px) { grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 640px) { grid-template-columns: 1fr; gap: 24px; }
 }
 
-.contact {
-  h6 {
-    color: var(--secondary-color);
-    font-size: var(--font-medium);
-    font-weight: 700;
-    margin-bottom: 16px;
-  }
+.brand { display: flex; flex-direction: column; gap: 16px; }
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+.logo { display: flex; flex-direction: column; width: fit-content; }
+
+.logoTop {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 3px;
+  font-style: italic;
+  line-height: 1;
+}
+
+.logoBottom { font-size: 9px; color: rgba(200,160,0,0.7); letter-spacing: 2px; font-weight: 500; }
+
+.desc {
+  font-size: var(--font-sm);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  max-width: 320px;
+}
+
+.socials { display: flex; gap: 10px; margin-top: 4px; }
+
+.social {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  font-weight: 700;
+  transition: all var(--transition);
+
+  &:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+}
+
+.col { display: flex; flex-direction: column; gap: 16px; }
+
+.colTitle {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+}
+
+.linkList { display: flex; flex-direction: column; gap: 10px; }
+
+.link {
+  font-size: var(--font-sm);
+  color: rgba(255,255,255,0.55);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  &::before { content: '›'; color: var(--primary); font-weight: 700; }
+  &:hover { color: var(--primary); padding-left: 4px; }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
-    font-size: var(--font-medium);
-  }
+    font-size: var(--font-sm);
+    color: rgba(255,255,255,0.55);
 
-  .contactIcon {
-    color: var(--secondary-color);
+    a { color: rgba(255,255,255,0.55); transition: color var(--transition); &:hover { color: var(--primary); } }
   }
 }
 
-.copyright {
-  margin-top: 40px;
-  padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  font-size: var(--font-small);
-  color: #8a8a8a;
+.icon { color: var(--primary); font-size: 14px; margin-top: 2px; flex-shrink: 0; }
+
+.certBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(200,160,0,0.1);
+  border: 1px solid rgba(200,160,0,0.3);
+  color: var(--primary);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  margin-top: 8px;
+}
+
+.footerBottom {
+  padding: 16px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    p { font-size: var(--font-xs); color: rgba(255,255,255,0.35); }
+  }
+}
+
+.payments { display: flex; align-items: center; gap: 8px; font-size: var(--font-xs); color: rgba(255,255,255,0.4); }
+
+.payTag {
+  background: rgba(255,255,255,0.08);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
 }

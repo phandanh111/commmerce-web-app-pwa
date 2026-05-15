@@ -1,0 +1,41 @@
+@use '@/styles/color';
+
+.title { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 24px; }
+
+.avatarSection { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 32px; }
+
+.avatar { background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important; }
+
+.uploadBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition);
+
+  &:hover { background: var(--primary); color: white; }
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+
+.saveBtn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-md) !important;
+  height: 44px !important;
+}
